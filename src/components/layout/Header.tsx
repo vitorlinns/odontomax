@@ -10,10 +10,10 @@ import Button from "@/components/shared/Button";
 import { colors } from "@/lib/colors";
 
 const nav = [
-  { label: "Início",      href: "/"            },
-  { label: "Tratamentos", href: "#tratamentos" },
-  { label: "Sobre nós",   href: "#sobre"       },
-  { label: "Contato",     href: "#contato"     },
+  { label: "Início",      href: "/"             },
+  { label: "Tratamentos", href: "#tratamentos"  },
+  { label: "Clientes",    href: "#depoimentos"  },
+  { label: "Sobre nós",   href: "#sobre"        },
 ];
 
 export default function Header() {
@@ -66,7 +66,7 @@ export default function Header() {
             ))}
           </nav>
 
-          <Button size="sm">
+          <Button size="sm" href="/agendar">
             <CalendarCheck size={16} />
             Agendar consulta
           </Button>
@@ -109,7 +109,7 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
-            <Button size="sm" className="mt-3 w-full">
+            <Button size="sm" className="mt-3 w-full" href="/agendar">
               <CalendarCheck size={16} />
               Agendar consulta
             </Button>

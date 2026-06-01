@@ -275,7 +275,7 @@ export default function Treatments() {
               className="flex flex-col gap-7"
             >
               <h2
-                className="text-4xl lg:text-5xl font-regular leading-tight"
+                className="text-4xl lg:text-5xl font-medium leading-tight"
                 style={{ color: colors.ink }}
               >
                 {title}
@@ -308,7 +308,7 @@ export default function Treatments() {
               </ul>
 
               <div>
-                <Button size="md">
+                <Button size="md" href="/agendar" className="w-full sm:w-auto">
                   <CalendarCheck size={17} />
                   Agendar consulta
                 </Button>

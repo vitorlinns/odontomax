@@ -31,11 +31,11 @@ export default function Hero() {
             variants={staggerContainer}
             initial={prefersReducedMotion ? false : "hidden"}
             animate="visible"
-            className="flex flex-col gap-7 max-w-xl"
+            className="flex flex-col gap-8 max-w-xl"
           >
             <motion.h1
               variants={prefersReducedMotion ? {} : fadeUp}
-              className="text-5xl lg:text-6xl xl:text-[68px] font-regular leading-[1.08] tracking-tight"
+              className="text-5xl lg:text-6xl xl:text-[68px] font-medium leading-[1.08] tracking-tight"
               style={{ fontFamily: "var(--font-figtree)", color: colors.ink }}
             >
               Seu sorriso{" "}
@@ -60,13 +60,13 @@ export default function Hero() {
 
             <motion.div
               variants={prefersReducedMotion ? {} : fadeUp}
-              className="flex flex-wrap gap-3 pt-1"
+              className="flex flex-col sm:flex-row gap-3 pt-3"
             >
-              <Button size="lg">
+              <Button size="lg" href="/agendar" className="w-full sm:w-auto">
                 <CalendarCheck size={19} />
                 Agendar consulta
               </Button>
-              <Button size="lg" variant="outline-dark">
+              <Button size="lg" variant="outline-dark" className="w-full sm:w-auto">
                 Nossos tratamentos
                 <ChevronRight size={17} />
               </Button>
@@ -75,16 +75,16 @@ export default function Hero() {
             {/* Trust stats */}
             <motion.div
               variants={prefersReducedMotion ? {} : fadeUp}
-              className="flex items-center gap-5 flex-wrap pt-4"
+              className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 pt-8"
             >
               {[
-                { icon: RiAwardLine,        number: "+15",   label: "anos de experiência" },
+                { icon: RiAwardLine,        number: "+15",    label: "anos de experiência" },
                 { icon: RiGroupLine,        number: "+8 mil", label: "pacientes atendidos" },
-                { icon: RiEmotionHappyLine, number: "98%",   label: "de satisfação"        },
+                { icon: RiEmotionHappyLine, number: "98%",    label: "de satisfação"       },
               ].map(({ icon: Icon, number, label }, i) => (
                 <div key={label} className="flex items-center gap-5">
                   {i > 0 && (
-                    <div className="h-10 w-px flex-shrink-0" style={{ backgroundColor: colors.border }} />
+                    <div className="hidden sm:block h-10 w-px flex-shrink-0" style={{ backgroundColor: colors.border }} />
                   )}
                   <div className="flex items-center gap-3">
                     <div
