@@ -16,7 +16,7 @@ export default function Hero() {
       className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden"
       style={{
         backgroundColor: colors.white,
-        backgroundImage: "url('/assets/images/site/hero-bg.png')",
+        backgroundImage: "url('/assets/images/site/hero-background.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
