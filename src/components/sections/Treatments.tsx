@@ -187,9 +187,6 @@ export default function Treatments() {
                 exit={prefersReducedMotion ? {} : { opacity: 0, scale: 1.02 }}
                 transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                 className="relative aspect-[640/540] rounded-3xl overflow-hidden"
-                style={{
-                  background: `linear-gradient(145deg, ${colors.brandDeep} 0%, ${colors.brand} 100%)`,
-                }}
               >
                 {/* Real image */}
                 <Image
