@@ -179,27 +179,27 @@ export default function Treatments() {
           <div className="flex flex-col gap-5">
 
             {/* Visual card */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={current}
-                initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={prefersReducedMotion ? {} : { opacity: 0, scale: 1.02 }}
-                transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                className="relative aspect-[640/540] rounded-3xl overflow-hidden"
-              >
-                {/* Real image */}
-                <Image
-                  src={image}
-                  alt={title}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                  priority={current === 0}
-                />
-
-              </motion.div>
-            </AnimatePresence>
+            <div className="relative aspect-[640/540] rounded-3xl overflow-hidden">
+              <AnimatePresence mode="sync">
+                <motion.div
+                  key={current}
+                  initial={prefersReducedMotion ? false : { opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={prefersReducedMotion ? {} : { opacity: 0 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                    priority={current === 0}
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
             {/* Progress + arrows */}
             <div className="flex items-center gap-4">
