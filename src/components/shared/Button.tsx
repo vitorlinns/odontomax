@@ -53,7 +53,7 @@ const hoverOut: Record<string, Partial<CSSStyleDeclaration>> = {
   ghost:          { backgroundColor: "transparent",                transform: "translateY(0px)" },
 };
 
-const sharedClass = (variant: string, size: string, className?: string) =>
+const sharedClass = (variant: string, size: keyof typeof sizes, className?: string) =>
   cn(
     "inline-flex items-center justify-center gap-2 font-semibold rounded-full cursor-pointer",
     "transition-all duration-200",
