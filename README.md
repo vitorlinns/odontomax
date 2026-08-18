@@ -9,7 +9,7 @@ Site institucional da Odontomax, clínica odontológica. Apresentação da clín
 - TypeScript
 - [Tailwind CSS v4](https://tailwindcss.com) tema e cores centralizados em `src/app/globals.css` via `@theme`
 - [Framer Motion](https://motion.dev) para animações
-- [Remixicon](https://remixicon.com) e [Lucide](https://lucide.dev) para ícones
+- [Remixicon](https://remixicon.com) para ícones
 
 ## Como rodar
 
