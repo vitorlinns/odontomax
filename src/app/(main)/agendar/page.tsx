@@ -2,8 +2,7 @@
 
 import { useState, useMemo, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { RiArrowLeftSLine, RiArrowRightSLine, RiCheckLine } from "@remixicon/react";
-import { CalendarCheck, ChevronDown, Check } from "lucide-react";
+import { RiArrowLeftSLine, RiArrowRightSLine, RiCheckLine, RiCalendarCheckLine, RiArrowDownSLine } from "@remixicon/react";
 import Button from "@/components/shared/Button";
 
 const TREATMENTS = [
@@ -326,7 +325,7 @@ export default function AgendarPage() {
                   }}
                 >
                   <span>{selectedTreatmentLabel}</span>
-                  <ChevronDown
+                  <RiArrowDownSLine
                     size={16}
                     style={{
                       color: "var(--color-muted-light)",
@@ -375,7 +374,7 @@ export default function AgendarPage() {
                         >
                           <span>{t.label}</span>
                           {t.id === treatment && (
-                            <Check size={14} style={{ color: "var(--color-brand)", flexShrink: 0 }} />
+                            <RiCheckLine size={14} style={{ color: "var(--color-brand)", flexShrink: 0 }} />
                           )}
                         </button>
                       ))}
@@ -462,7 +461,7 @@ export default function AgendarPage() {
               className="w-full"
               disabled={!selectedDate || !selectedTime}
             >
-              <CalendarCheck size={18} />
+              <RiCalendarCheckLine size={18} />
               Confirmar agendamento
             </Button>
 

@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { RiAwardLine, RiHeartLine, RiShieldCheckLine } from "@remixicon/react";
-import { CalendarCheck } from "lucide-react";
+import { RiAwardLine, RiHeartLine, RiShieldCheckLine, RiCalendarCheckLine } from "@remixicon/react";
 import Button from "@/components/shared/Button";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
@@ -106,7 +105,7 @@ export default function About() {
 
             <motion.div variants={prefersReducedMotion ? {} : fadeUp}>
               <Button size="md" href="/agendar" className="w-full sm:w-auto">
-                <CalendarCheck size={17} />
+                <RiCalendarCheckLine size={17} />
                 Agendar consulta
               </Button>
             </motion.div>

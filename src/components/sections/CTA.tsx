@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { CalendarCheck, Phone } from "lucide-react";
+import { RiCalendarCheckLine, RiPhoneLine } from "@remixicon/react";
 import Button from "@/components/shared/Button";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
@@ -55,11 +55,11 @@ export default function CTA() {
             className="w-full flex flex-col sm:flex-row sm:items-center sm:justify-center gap-3 pt-2"
           >
             <Button size="lg" href="/agendar" className="w-full sm:w-auto">
-              <CalendarCheck size={19} />
+              <RiCalendarCheckLine size={19} />
               Agendar consulta
             </Button>
             <Button size="lg" variant="outline-light" className="w-full sm:w-auto">
-              <Phone size={17} />
+              <RiPhoneLine size={17} />
               Falar pelo WhatsApp
             </Button>
           </motion.div>

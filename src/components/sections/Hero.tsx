@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { CalendarCheck, ChevronRight } from "lucide-react";
-import { RiAwardLine, RiGroupLine, RiEmotionHappyLine } from "@remixicon/react";
+import { RiAwardLine, RiGroupLine, RiEmotionHappyLine, RiCalendarCheckLine, RiArrowRightSLine } from "@remixicon/react";
 import { fadeUp, staggerContainer, scaleIn } from "@/lib/animations";
 import Button from "@/components/shared/Button";
 
@@ -62,12 +61,12 @@ export default function Hero() {
               className="flex flex-col sm:flex-row gap-3 pt-3"
             >
               <Button size="lg" href="/agendar" className="w-full sm:w-auto">
-                <CalendarCheck size={19} />
+                <RiCalendarCheckLine size={19} />
                 Agendar consulta
               </Button>
               <Button size="lg" variant="outline-dark" className="w-full sm:w-auto">
                 Nossos tratamentos
-                <ChevronRight size={17} />
+                <RiArrowRightSLine size={17} />
               </Button>
             </motion.div>
 

@@ -10,9 +10,10 @@ import {
   RiShieldCrossLine,
   RiToolsLine,
   RiScissorsLine,
+  RiCalendarCheckLine,
+  RiCheckLine,
 } from "@remixicon/react";
 import Image from "next/image";
-import { CalendarCheck, Check } from "lucide-react";
 import Button from "@/components/shared/Button";
 
 const INTERVAL = 7000;
@@ -291,7 +292,7 @@ export default function Treatments() {
                       className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
                       style={{ backgroundColor: "var(--color-brand-light)" }}
                     >
-                      <Check size={11} style={{ color: "var(--color-brand)" }} />
+                      <RiCheckLine size={11} style={{ color: "var(--color-brand)" }} />
                     </div>
                     <span
                       className="text-sm font-medium"
@@ -305,7 +306,7 @@ export default function Treatments() {
 
               <div>
                 <Button size="md" href="/agendar" className="w-full sm:w-auto">
-                  <CalendarCheck size={17} />
+                  <RiCalendarCheckLine size={17} />
                   Agendar consulta
                 </Button>
               </div>

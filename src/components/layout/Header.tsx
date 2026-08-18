@@ -3,8 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { RiMenuLine, RiCloseLine } from "@remixicon/react";
-import { CalendarCheck } from "lucide-react";
+import { RiMenuLine, RiCloseLine, RiCalendarCheckLine } from "@remixicon/react";
 import { AnimatePresence, motion } from "framer-motion";
 import Button from "@/components/shared/Button";
 
@@ -66,7 +65,7 @@ export default function Header() {
           </nav>
 
           <Button size="sm" href="/agendar">
-            <CalendarCheck size={16} />
+            <RiCalendarCheckLine size={16} />
             Agendar consulta
           </Button>
         </div>
@@ -109,7 +108,7 @@ export default function Header() {
               </Link>
             ))}
             <Button size="sm" className="mt-3 w-full" href="/agendar">
-              <CalendarCheck size={16} />
+              <RiCalendarCheckLine size={16} />
               Agendar consulta
             </Button>
           </motion.div>
