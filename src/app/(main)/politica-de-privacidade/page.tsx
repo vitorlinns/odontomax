@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { colors } from "@/lib/colors";
 
 export const metadata = {
   title: "Política de Privacidade | Odontomax",
@@ -10,36 +9,36 @@ const LAST_UPDATED = "01 de junho de 2025";
 
 export default function PrivacyPage() {
   return (
-    <section style={{ backgroundColor: colors.surface }} className="flex-1">
+    <section style={{ backgroundColor: "var(--color-surface)" }} className="flex-1">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
 
         <div className="mb-10">
-          <p className="text-sm mb-3" style={{ color: colors.mutedLight }}>
+          <p className="text-sm mb-3" style={{ color: "var(--color-muted-light)" }}>
             Atualizado em {LAST_UPDATED}
           </p>
           <h1
             className="text-4xl font-medium leading-tight mb-4"
-            style={{ color: colors.ink }}
+            style={{ color: "var(--color-ink)" }}
           >
-            Política de <span style={{ color: colors.brand }}>Privacidade</span>
+            Política de <span style={{ color: "var(--color-brand)" }}>Privacidade</span>
           </h1>
-          <p className="text-base leading-relaxed" style={{ color: colors.muted }}>
+          <p className="text-base leading-relaxed" style={{ color: "var(--color-muted)" }}>
             A Odontomax valoriza a privacidade dos seus pacientes e visitantes. Este documento
             descreve quais dados pessoais coletamos, como os utilizamos e quais são os seus
             direitos, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018, LGPD).
           </p>
         </div>
 
-        <div className="flex flex-col gap-10" style={{ color: colors.muted }}>
+        <div className="flex flex-col gap-10" style={{ color: "var(--color-muted)" }}>
 
           <Section title="1. Quem somos">
             <p>
-              <strong style={{ color: colors.ink }}>Odontomax Clínica Odontológica</strong> é a
+              <strong style={{ color: "var(--color-ink)" }}>Odontomax Clínica Odontológica</strong> é a
               controladora dos dados pessoais tratados por meio deste site. Para dúvidas ou
               solicitações relacionadas a esta política, entre em contato pelo e-mail{" "}
               <a
                 href="mailto:contato@odontomax.com.br"
-                style={{ color: colors.brand }}
+                style={{ color: "var(--color-brand)" }}
               >
                 contato@odontomax.com.br
               </a>
@@ -50,16 +49,16 @@ export default function PrivacyPage() {
           <Section title="2. Dados coletados na página de agendamento">
             <p>
               Ao preencher o formulário disponível na página{" "}
-              <Link href="/agendar" style={{ color: colors.brand }}>/agendar</Link>,
+              <Link href="/agendar" style={{ color: "var(--color-brand)" }}>/agendar</Link>,
               coletamos os seguintes dados pessoais:
             </p>
             <ul className="flex flex-col gap-2 mt-3 pl-4 list-disc">
-              <li><strong style={{ color: colors.ink }}>Nome completo:</strong> para identificação do paciente.</li>
-              <li><strong style={{ color: colors.ink }}>WhatsApp / Telefone:</strong> para confirmação e contato sobre o agendamento.</li>
-              <li><strong style={{ color: colors.ink }}>E-mail:</strong> para envio de confirmações e comunicações relacionadas à consulta.</li>
-              <li><strong style={{ color: colors.ink }}>Observações</strong> (opcional): informações adicionais que o paciente queira compartilhar antes da consulta.</li>
-              <li><strong style={{ color: colors.ink }}>Tratamento desejado:</strong> para direcionar o atendimento ao profissional adequado.</li>
-              <li><strong style={{ color: colors.ink }}>Data e horário preferidos:</strong> para organização da agenda clínica.</li>
+              <li><strong style={{ color: "var(--color-ink)" }}>Nome completo:</strong> para identificação do paciente.</li>
+              <li><strong style={{ color: "var(--color-ink)" }}>WhatsApp / Telefone:</strong> para confirmação e contato sobre o agendamento.</li>
+              <li><strong style={{ color: "var(--color-ink)" }}>E-mail:</strong> para envio de confirmações e comunicações relacionadas à consulta.</li>
+              <li><strong style={{ color: "var(--color-ink)" }}>Observações</strong> (opcional): informações adicionais que o paciente queira compartilhar antes da consulta.</li>
+              <li><strong style={{ color: "var(--color-ink)" }}>Tratamento desejado:</strong> para direcionar o atendimento ao profissional adequado.</li>
+              <li><strong style={{ color: "var(--color-ink)" }}>Data e horário preferidos:</strong> para organização da agenda clínica.</li>
             </ul>
           </Section>
 
@@ -80,9 +79,9 @@ export default function PrivacyPage() {
           <Section title="4. Base legal">
             <p>
               O tratamento dos dados se fundamenta no{" "}
-              <strong style={{ color: colors.ink }}>consentimento do titular</strong> (art. 7º, I da
+              <strong style={{ color: "var(--color-ink)" }}>consentimento do titular</strong> (art. 7º, I da
               LGPD), manifestado pelo preenchimento voluntário do formulário de agendamento, e na{" "}
-              <strong style={{ color: colors.ink }}>execução de contrato</strong> (art. 7º, V),
+              <strong style={{ color: "var(--color-ink)" }}>execução de contrato</strong> (art. 7º, V),
               uma vez que os dados são necessários para a prestação do serviço de saúde solicitado.
             </p>
           </Section>
@@ -118,7 +117,7 @@ export default function PrivacyPage() {
             </ul>
             <p className="mt-3">
               Para exercer qualquer um desses direitos, entre em contato pelo e-mail{" "}
-              <a href="mailto:contato@odontomax.com.br" style={{ color: colors.brand }}>
+              <a href="mailto:contato@odontomax.com.br" style={{ color: "var(--color-brand)" }}>
                 contato@odontomax.com.br
               </a>
               .
@@ -150,7 +149,7 @@ export default function PrivacyPage() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-3">
-      <h2 className="text-lg font-semibold" style={{ color: colors.ink }}>
+      <h2 className="text-lg font-semibold" style={{ color: "var(--color-ink)" }}>
         {title}
       </h2>
       <div className="text-sm leading-relaxed flex flex-col gap-2">

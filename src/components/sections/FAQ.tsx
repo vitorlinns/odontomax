@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { RiAddLine, RiSubtractLine } from "@remixicon/react";
-import { colors } from "@/lib/colors";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
 const faqs = [
@@ -49,7 +48,7 @@ export default function FAQ() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section id="faq" className="py-24" style={{ backgroundColor: colors.surface }}>
+    <section id="faq" className="py-24" style={{ backgroundColor: "var(--color-surface)" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-[1fr_1.6fr] gap-16 lg:gap-24">
 
@@ -64,15 +63,15 @@ export default function FAQ() {
             <motion.h2
               variants={prefersReducedMotion ? {} : fadeUp}
               className="text-4xl lg:text-5xl leading-tight"
-              style={{ fontWeight: 500, color: colors.ink }}
+              style={{ fontWeight: 500, color: "var(--color-ink)" }}
             >
               Perguntas{" "}
-              <span style={{ color: colors.brand }}>frequentes</span>
+              <span style={{ color: "var(--color-brand)" }}>frequentes</span>
             </motion.h2>
             <motion.p
               variants={prefersReducedMotion ? {} : fadeUp}
               className="text-base"
-              style={{ color: colors.muted }}
+              style={{ color: "var(--color-muted)" }}
             >
               Tire suas dúvidas antes de agendar. Se não encontrar o que procura, fale com a nossa equipe.
             </motion.p>
@@ -90,7 +89,7 @@ export default function FAQ() {
               <motion.div
                 key={question}
                 variants={prefersReducedMotion ? {} : fadeUp}
-                style={{ borderBottom: `1px solid ${colors.border}` }}
+                style={{ borderBottom: `1px solid var(--color-border)` }}
               >
                 <button
                   onClick={() => setOpen(open === i ? null : i)}
@@ -99,15 +98,15 @@ export default function FAQ() {
                 >
                   <span
                     className="text-base font-medium"
-                    style={{ color: open === i ? colors.brand : colors.ink }}
+                    style={{ color: open === i ? "var(--color-brand)" : "var(--color-ink)" }}
                   >
                     {question}
                   </span>
                   <span
                     className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-200"
                     style={{
-                      backgroundColor: open === i ? colors.brand : colors.surface2,
-                      color: open === i ? colors.ink : colors.ink3,
+                      backgroundColor: open === i ? "var(--color-brand)" : "var(--color-surface-2)",
+                      color: open === i ? "var(--color-ink)" : "var(--color-ink-3)",
                     }}
                   >
                     {open === i
@@ -128,7 +127,7 @@ export default function FAQ() {
                     >
                       <p
                         className="text-sm leading-relaxed pb-5"
-                        style={{ color: colors.muted }}
+                        style={{ color: "var(--color-muted)" }}
                       >
                         {answer}
                       </p>

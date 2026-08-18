@@ -3,7 +3,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { CalendarCheck, Phone } from "lucide-react";
 import Button from "@/components/shared/Button";
-import { colors } from "@/lib/colors";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
 export default function CTA() {
@@ -12,17 +11,17 @@ export default function CTA() {
   return (
     <section
       className="relative py-28 overflow-hidden"
-      style={{ backgroundColor: colors.ink }}
+      style={{ backgroundColor: "var(--color-ink)" }}
     >
       {/* Decorative blobs */}
       <div
         className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full blur-3xl opacity-10 pointer-events-none"
-        style={{ backgroundColor: colors.brand }}
+        style={{ backgroundColor: "var(--color-brand)" }}
         aria-hidden
       />
       <div
         className="absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full blur-3xl opacity-10 pointer-events-none"
-        style={{ backgroundColor: colors.brand }}
+        style={{ backgroundColor: "var(--color-brand)" }}
         aria-hidden
       />
 
@@ -37,16 +36,16 @@ export default function CTA() {
           <motion.h2
             variants={prefersReducedMotion ? {} : fadeUp}
             className="text-4xl lg:text-5xl leading-tight"
-            style={{ fontWeight: 500, color: colors.white }}
+            style={{ fontWeight: 500, color: "var(--color-white)" }}
           >
             Seu sorriso perfeito{" "}
-            <span style={{ color: colors.brand }}>começa aqui</span>
+            <span style={{ color: "var(--color-brand)" }}>começa aqui</span>
           </motion.h2>
 
           <motion.p
             variants={prefersReducedMotion ? {} : fadeUp}
             className="text-lg max-w-lg"
-            style={{ color: colors.mutedLighter }}
+            style={{ color: "var(--color-muted-lighter)" }}
           >
             Agende sua consulta hoje e dê o primeiro passo para transformar sua saúde bucal com quem entende do assunto.
           </motion.p>

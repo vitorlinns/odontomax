@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { colors } from "@/lib/colors";
 import type { ButtonHTMLAttributes } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -18,37 +17,37 @@ const sizes = {
 };
 
 const baseStyle: Record<string, React.CSSProperties> = {
-  primary: { backgroundColor: colors.brand, color: colors.ink },
+  primary: { backgroundColor: "var(--color-brand)", color: "var(--color-ink)" },
   outline: {
     backgroundColor: "transparent",
-    color: colors.brand,
-    border: `1.5px solid ${colors.brandSoft}`,
+    color: "var(--color-brand)",
+    border: `1.5px solid var(--color-brand-soft)`,
   },
   "outline-dark": {
     backgroundColor: "transparent",
-    color: colors.ink,
-    border: `1.5px solid ${colors.ink3}`,
+    color: "var(--color-ink)",
+    border: `1.5px solid var(--color-ink-3)`,
   },
   "outline-light": {
     backgroundColor: "transparent",
-    color: colors.white,
+    color: "var(--color-white)",
     border: `1.5px solid rgba(255,255,255,0.30)`,
   },
-  ghost: { backgroundColor: "transparent", color: colors.ink3 },
+  ghost: { backgroundColor: "transparent", color: "var(--color-ink-3)" },
 };
 
 const hoverIn: Record<string, Partial<CSSStyleDeclaration>> = {
-  primary:        { backgroundColor: colors.brandHover,          transform: "translateY(-2px)" },
-  outline:        { borderColor: colors.brandMid,                 transform: "translateY(-2px)" },
-  "outline-dark": { borderColor: colors.ink,                      transform: "translateY(-2px)" },
+  primary:        { backgroundColor: "var(--color-brand-hover)",          transform: "translateY(-2px)" },
+  outline:        { borderColor: "var(--color-brand-mid)",                 transform: "translateY(-2px)" },
+  "outline-dark": { borderColor: "var(--color-ink)",                      transform: "translateY(-2px)" },
   "outline-light":{ borderColor: "rgba(255,255,255,0.60)",        transform: "translateY(-2px)" },
-  ghost:          { backgroundColor: colors.surface,              transform: "translateY(-2px)" },
+  ghost:          { backgroundColor: "var(--color-surface)",              transform: "translateY(-2px)" },
 };
 
 const hoverOut: Record<string, Partial<CSSStyleDeclaration>> = {
-  primary:        { backgroundColor: colors.brand,                transform: "translateY(0px)" },
-  outline:        { borderColor: colors.brandSoft,                 transform: "translateY(0px)" },
-  "outline-dark": { borderColor: colors.ink3,                      transform: "translateY(0px)" },
+  primary:        { backgroundColor: "var(--color-brand)",                transform: "translateY(0px)" },
+  outline:        { borderColor: "var(--color-brand-soft)",                 transform: "translateY(0px)" },
+  "outline-dark": { borderColor: "var(--color-ink-3)",                      transform: "translateY(0px)" },
   "outline-light":{ borderColor: "rgba(255,255,255,0.30)",         transform: "translateY(0px)" },
   ghost:          { backgroundColor: "transparent",                transform: "translateY(0px)" },
 };

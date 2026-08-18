@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { RiStarFill } from "@remixicon/react";
-import { colors } from "@/lib/colors";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
 const testimonials = [
@@ -55,7 +54,7 @@ export default function Testimonials() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section id="depoimentos" className="py-24" style={{ backgroundColor: colors.white }}>
+    <section id="depoimentos" className="py-24" style={{ backgroundColor: "var(--color-white)" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
         {/* Heading */}
@@ -69,15 +68,15 @@ export default function Testimonials() {
           <motion.h2
             variants={prefersReducedMotion ? {} : fadeUp}
             className="text-4xl lg:text-5xl font-medium leading-tight"
-            style={{ color: colors.ink }}
+            style={{ color: "var(--color-ink)" }}
           >
             O que nossos{" "}
-            <span style={{ color: colors.brand }}>pacientes dizem</span>
+            <span style={{ color: "var(--color-brand)" }}>pacientes dizem</span>
           </motion.h2>
           <motion.p
             variants={prefersReducedMotion ? {} : fadeUp}
             className="text-base max-w-xl"
-            style={{ color: colors.muted }}
+            style={{ color: "var(--color-muted)" }}
           >
             A satisfação de quem confia no nosso trabalho é o nosso maior resultado.
           </motion.p>
@@ -97,8 +96,8 @@ export default function Testimonials() {
               variants={prefersReducedMotion ? {} : fadeUp}
               className="flex flex-col gap-5 p-7 rounded-2xl"
               style={{
-                backgroundColor: colors.surface,
-                border: `1px solid ${colors.border}`,
+                backgroundColor: "var(--color-surface)",
+                border: `1px solid var(--color-border)`,
               }}
             >
              
@@ -106,7 +105,7 @@ export default function Testimonials() {
               {/* Quote text */}
               <p
                 className="text-sm leading-relaxed flex-1 -mt-1"
-                style={{ color: colors.ink3 }}
+                style={{ color: "var(--color-ink-3)" }}
               >
                 {text}
               </p>
@@ -125,16 +124,16 @@ export default function Testimonials() {
                   ) : (
                     <div
                       className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
-                      style={{ backgroundColor: colors.brand, color: colors.ink }}
+                      style={{ backgroundColor: "var(--color-brand)", color: "var(--color-ink)" }}
                     >
                       {initials}
                     </div>
                   )}
                   <div>
-                    <p className="text-sm font-semibold leading-tight" style={{ color: colors.ink }}>
+                    <p className="text-sm font-semibold leading-tight" style={{ color: "var(--color-ink)" }}>
                       {name}
                     </p>
-                    <p className="text-xs leading-tight mt-0.5" style={{ color: colors.mutedLight }}>
+                    <p className="text-xs leading-tight mt-0.5" style={{ color: "var(--color-muted-light)" }}>
                       {treatment}
                     </p>
                   </div>
@@ -143,7 +142,7 @@ export default function Testimonials() {
                 {/* Stars */}
                 <div className="flex gap-0.5 flex-shrink-0">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <RiStarFill key={i} size={13} style={{ color: colors.brand }} />
+                    <RiStarFill key={i} size={13} style={{ color: "var(--color-brand)" }} />
                   ))}
                 </div>
               </div>

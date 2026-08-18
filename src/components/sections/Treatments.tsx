@@ -14,7 +14,6 @@ import {
 import Image from "next/image";
 import { CalendarCheck, Check } from "lucide-react";
 import Button from "@/components/shared/Button";
-import { colors } from "@/lib/colors";
 
 const INTERVAL = 7000;
 
@@ -138,7 +137,7 @@ export default function Treatments() {
     <section
       id="tratamentos"
       className="py-24"
-      style={{ backgroundColor: colors.surface }}
+      style={{ backgroundColor: "var(--color-surface)" }}
       onMouseEnter={() => {
         isPaused.current = true;
         progressControls.stop();
@@ -162,12 +161,12 @@ export default function Treatments() {
         >
           <h2
             className="text-4xl lg:text-5xl leading-tight"
-            style={{ fontWeight: 500, color: colors.ink }}
+            style={{ fontWeight: 500, color: "var(--color-ink)" }}
           >
             Tratamentos que{" "}
-            <span style={{ color: colors.brand }}>transformam sorrisos</span>
+            <span style={{ color: "var(--color-brand)" }}>transformam sorrisos</span>
           </h2>
-          <p className="text-base max-w-xl" style={{ color: colors.muted }}>
+          <p className="text-base max-w-xl" style={{ color: "var(--color-muted)" }}>
             Cada paciente é único. Por isso oferecemos soluções odontológicas
             personalizadas com tecnologia de ponta e atendimento humanizado.
           </p>
@@ -206,12 +205,12 @@ export default function Treatments() {
               {/* Progress bar */}
               <div
                 className="flex-1 h-[3px] rounded-full overflow-hidden"
-                style={{ backgroundColor: colors.border }}
+                style={{ backgroundColor: "var(--color-border)" }}
               >
                 <motion.div
                   animate={progressControls}
                   className="h-full rounded-full"
-                  style={{ backgroundColor: colors.brand, width: "0%" }}
+                  style={{ backgroundColor: "var(--color-brand)", width: "0%" }}
                 />
               </div>
 
@@ -222,17 +221,17 @@ export default function Treatments() {
                   aria-label="Tratamento anterior"
                   className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5"
                   style={{
-                    border: `1.5px solid ${colors.border}`,
-                    color: colors.ink3,
-                    backgroundColor: colors.white,
+                    border: `1.5px solid var(--color-border)`,
+                    color: "var(--color-ink-3)",
+                    backgroundColor: "var(--color-white)",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = colors.brandMid;
-                    e.currentTarget.style.color = colors.brand;
+                    e.currentTarget.style.borderColor = "var(--color-brand-mid)";
+                    e.currentTarget.style.color = "var(--color-brand)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = colors.border;
-                    e.currentTarget.style.color = colors.ink3;
+                    e.currentTarget.style.borderColor = "var(--color-border)";
+                    e.currentTarget.style.color = "var(--color-ink-3)";
                   }}
                 >
                   <RiArrowLeftSLine size={18} />
@@ -242,17 +241,17 @@ export default function Treatments() {
                   aria-label="Próximo tratamento"
                   className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5"
                   style={{
-                    border: `1.5px solid ${colors.border}`,
-                    color: colors.ink3,
-                    backgroundColor: colors.white,
+                    border: `1.5px solid var(--color-border)`,
+                    color: "var(--color-ink-3)",
+                    backgroundColor: "var(--color-white)",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = colors.brandMid;
-                    e.currentTarget.style.color = colors.brand;
+                    e.currentTarget.style.borderColor = "var(--color-brand-mid)";
+                    e.currentTarget.style.color = "var(--color-brand)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = colors.border;
-                    e.currentTarget.style.color = colors.ink3;
+                    e.currentTarget.style.borderColor = "var(--color-border)";
+                    e.currentTarget.style.color = "var(--color-ink-3)";
                   }}
                 >
                   <RiArrowRightSLine size={18} />
@@ -273,14 +272,14 @@ export default function Treatments() {
             >
               <h2
                 className="text-4xl lg:text-5xl font-medium leading-tight"
-                style={{ color: colors.ink }}
+                style={{ color: "var(--color-ink)" }}
               >
                 {title}
               </h2>
 
               <p
                 className="text-lg leading-relaxed"
-                style={{ color: colors.muted }}
+                style={{ color: "var(--color-muted)" }}
               >
                 {description}
               </p>
@@ -290,13 +289,13 @@ export default function Treatments() {
                   <li key={benefit} className="flex items-center gap-3">
                     <div
                       className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: colors.brandLight }}
+                      style={{ backgroundColor: "var(--color-brand-light)" }}
                     >
-                      <Check size={11} style={{ color: colors.brand }} />
+                      <Check size={11} style={{ color: "var(--color-brand)" }} />
                     </div>
                     <span
                       className="text-sm font-medium"
-                      style={{ color: colors.ink3 }}
+                      style={{ color: "var(--color-ink-3)" }}
                     >
                       {benefit}
                     </span>

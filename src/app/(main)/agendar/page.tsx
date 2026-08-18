@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { RiArrowLeftSLine, RiArrowRightSLine, RiCheckLine } from "@remixicon/react";
 import { CalendarCheck, ChevronDown, Check } from "lucide-react";
 import Button from "@/components/shared/Button";
-import { colors } from "@/lib/colors";
 
 const TREATMENTS = [
   { id: "avaliacao",   label: "Avaliação geral / Primeiro atendimento" },
@@ -96,7 +95,7 @@ export default function AgendarPage() {
 
   if (submitted) {
     return (
-      <section style={{ backgroundColor: colors.surface }} className="flex-1 flex items-center justify-center px-6 py-24">
+      <section style={{ backgroundColor: "var(--color-surface)" }} className="flex-1 flex items-center justify-center px-6 py-24">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -105,14 +104,14 @@ export default function AgendarPage() {
         >
           <div
             className="w-16 h-16 rounded-full flex items-center justify-center"
-            style={{ backgroundColor: colors.brandLight }}
+            style={{ backgroundColor: "var(--color-brand-light)" }}
           >
-            <RiCheckLine size={32} style={{ color: colors.brand }} />
+            <RiCheckLine size={32} style={{ color: "var(--color-brand)" }} />
           </div>
-          <h1 className="text-2xl font-semibold" style={{ color: colors.ink }}>
+          <h1 className="text-2xl font-semibold" style={{ color: "var(--color-ink)" }}>
             Solicitação enviada!
           </h1>
-          <p className="text-base" style={{ color: colors.muted }}>
+          <p className="text-base" style={{ color: "var(--color-muted)" }}>
             Recebemos seu pedido de agendamento. Nossa equipe entrará em
             contato em até 24 horas para confirmar o horário.
           </p>
@@ -128,10 +127,10 @@ export default function AgendarPage() {
     width: "100%",
     padding: "12px 14px",
     borderRadius: "12px",
-    border: `1px solid ${colors.border}`,
+    border: `1px solid var(--color-border)`,
     fontSize: "14px",
-    color: colors.ink,
-    backgroundColor: colors.white,
+    color: "var(--color-ink)",
+    backgroundColor: "var(--color-white)",
     outline: "none",
     fontFamily: "var(--font-figtree)",
   };
@@ -139,19 +138,19 @@ export default function AgendarPage() {
   const selectedTreatmentLabel = TREATMENTS.find(t => t.id === treatment)?.label;
 
   return (
-    <section style={{ backgroundColor: colors.surface }} className="flex-1">
+    <section style={{ backgroundColor: "var(--color-surface)" }} className="flex-1">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
 
         {/* Heading */}
         <div className="mb-12">
           <h1
             className="text-4xl lg:text-5xl leading-tight mb-3"
-            style={{ fontWeight: 500, color: colors.ink }}
+            style={{ fontWeight: 500, color: "var(--color-ink)" }}
           >
             Agende sua{" "}
-            <span style={{ color: colors.brand }}>consulta</span>
+            <span style={{ color: "var(--color-brand)" }}>consulta</span>
           </h1>
-          <p className="text-base" style={{ color: colors.muted }}>
+          <p className="text-base" style={{ color: "var(--color-muted)" }}>
             Escolha o tratamento, selecione um horário e preencha seus dados. É rápido e sem compromisso.
           </p>
         </div>
@@ -164,28 +163,28 @@ export default function AgendarPage() {
             {/* Calendar */}
             <div
               className="rounded-2xl p-6"
-              style={{ backgroundColor: colors.white, border: `1px solid ${colors.border}` }}
+              style={{ backgroundColor: "var(--color-white)", border: `1px solid var(--color-border)` }}
             >
               {/* Month navigation */}
               <div className="flex items-center justify-between mb-6">
                 <button
                   onClick={prevMonth}
                   className="w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-150 cursor-pointer"
-                  style={{ border: `1px solid ${colors.border}`, color: colors.ink3 }}
-                  onMouseEnter={e => e.currentTarget.style.borderColor = colors.brandMid}
-                  onMouseLeave={e => e.currentTarget.style.borderColor = colors.border}
+                  style={{ border: `1px solid var(--color-border)`, color: "var(--color-ink-3)" }}
+                  onMouseEnter={e => e.currentTarget.style.borderColor = "var(--color-brand-mid)"}
+                  onMouseLeave={e => e.currentTarget.style.borderColor = "var(--color-border)"}
                 >
                   <RiArrowLeftSLine size={18} />
                 </button>
-                <span className="text-sm font-semibold" style={{ color: colors.ink }}>
+                <span className="text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
                   {MONTHS[viewMonth]} {viewYear}
                 </span>
                 <button
                   onClick={nextMonth}
                   className="w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-150 cursor-pointer"
-                  style={{ border: `1px solid ${colors.border}`, color: colors.ink3 }}
-                  onMouseEnter={e => e.currentTarget.style.borderColor = colors.brandMid}
-                  onMouseLeave={e => e.currentTarget.style.borderColor = colors.border}
+                  style={{ border: `1px solid var(--color-border)`, color: "var(--color-ink-3)" }}
+                  onMouseEnter={e => e.currentTarget.style.borderColor = "var(--color-brand-mid)"}
+                  onMouseLeave={e => e.currentTarget.style.borderColor = "var(--color-border)"}
                 >
                   <RiArrowRightSLine size={18} />
                 </button>
@@ -197,7 +196,7 @@ export default function AgendarPage() {
                   <div
                     key={d}
                     className="text-center text-xs font-medium py-1"
-                    style={{ color: d === "Dom" ? colors.mutedLighter : colors.mutedLight }}
+                    style={{ color: d === "Dom" ? "var(--color-muted-lighter)" : "var(--color-muted-light)" }}
                   >
                     {d}
                   </div>
@@ -219,20 +218,20 @@ export default function AgendarPage() {
                       className="h-10 w-full rounded-xl text-sm font-medium transition-all duration-150"
                       style={{
                         cursor: disabled ? "not-allowed" : "pointer",
-                        backgroundColor: selected ? colors.brand : "transparent",
+                        backgroundColor: selected ? "var(--color-brand)" : "transparent",
                         color: selected
-                          ? colors.ink
+                          ? "var(--color-ink)"
                           : disabled
-                            ? colors.mutedLighter
+                            ? "var(--color-muted-lighter)"
                             : isToday
-                              ? colors.brand
-                              : colors.ink,
+                              ? "var(--color-brand)"
+                              : "var(--color-ink)",
                         fontWeight: isToday ? 700 : 500,
-                        outline: isToday && !selected ? `2px solid ${colors.brandSoft}` : "none",
+                        outline: isToday && !selected ? `2px solid var(--color-brand-soft)` : "none",
                       }}
                       onMouseEnter={e => {
                         if (!disabled && !selected)
-                          e.currentTarget.style.backgroundColor = colors.surface2;
+                          e.currentTarget.style.backgroundColor = "var(--color-surface-2)";
                       }}
                       onMouseLeave={e => {
                         if (!disabled && !selected)
@@ -253,11 +252,11 @@ export default function AgendarPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
                 className="rounded-2xl p-6"
-                style={{ backgroundColor: colors.white, border: `1px solid ${colors.border}` }}
+                style={{ backgroundColor: "var(--color-white)", border: `1px solid var(--color-border)` }}
               >
-                <p className="text-sm font-semibold mb-4" style={{ color: colors.ink }}>
+                <p className="text-sm font-semibold mb-4" style={{ color: "var(--color-ink)" }}>
                   Horários disponíveis:{" "}
-                  <span style={{ color: colors.muted }}>
+                  <span style={{ color: "var(--color-muted)" }}>
                     {selectedDate.toLocaleDateString("pt-BR", { weekday: "long", day: "numeric", month: "long" })}
                   </span>
                 </p>
@@ -274,16 +273,16 @@ export default function AgendarPage() {
                         style={{
                           cursor: taken ? "not-allowed" : "pointer",
                           backgroundColor: selected
-                            ? colors.brand
+                            ? "var(--color-brand)"
                             : taken
-                              ? colors.surface
-                              : colors.surface2,
+                              ? "var(--color-surface)"
+                              : "var(--color-surface-2)",
                           color: selected
-                            ? colors.ink
+                            ? "var(--color-ink)"
                             : taken
-                              ? colors.mutedLighter
-                              : colors.ink3,
-                          border: selected ? "none" : `1px solid ${colors.border}`,
+                              ? "var(--color-muted-lighter)"
+                              : "var(--color-ink-3)",
+                          border: selected ? "none" : `1px solid var(--color-border)`,
                           textDecoration: taken ? "line-through" : "none",
                         }}
                       >
@@ -302,9 +301,9 @@ export default function AgendarPage() {
             {/* Treatment select */}
             <div
               className="rounded-2xl p-6 flex flex-col gap-4"
-              style={{ backgroundColor: colors.white, border: `1px solid ${colors.border}` }}
+              style={{ backgroundColor: "var(--color-white)", border: `1px solid var(--color-border)` }}
             >
-              <p className="text-sm font-semibold" style={{ color: colors.ink }}>
+              <p className="text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
                 Tratamento desejado
               </p>
 
@@ -317,9 +316,9 @@ export default function AgendarPage() {
                   style={{
                     padding: "12px 14px",
                     borderRadius: "12px",
-                    border: `1px solid ${treatmentOpen ? colors.brandMid : colors.border}`,
-                    backgroundColor: colors.white,
-                    color: colors.ink,
+                    border: `1px solid ${treatmentOpen ? "var(--color-brand-mid)" : "var(--color-border)"}`,
+                    backgroundColor: "var(--color-white)",
+                    color: "var(--color-ink)",
                     cursor: "pointer",
                     fontFamily: "var(--font-figtree)",
                     fontWeight: 400,
@@ -330,7 +329,7 @@ export default function AgendarPage() {
                   <ChevronDown
                     size={16}
                     style={{
-                      color: colors.mutedLight,
+                      color: "var(--color-muted-light)",
                       flexShrink: 0,
                       transform: treatmentOpen ? "rotate(180deg)" : "rotate(0deg)",
                       transition: "transform 0.2s",
@@ -349,8 +348,8 @@ export default function AgendarPage() {
                       style={{
                         top: "calc(100% + 6px)",
                         borderRadius: "12px",
-                        border: `1px solid ${colors.border}`,
-                        backgroundColor: colors.white,
+                        border: `1px solid var(--color-border)`,
+                        backgroundColor: "var(--color-white)",
                         boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
                       }}
                     >
@@ -361,14 +360,14 @@ export default function AgendarPage() {
                           onClick={() => { setTreatment(t.id); setTreatmentOpen(false); }}
                           className="w-full flex items-center justify-between gap-3 px-4 py-3 text-sm text-left transition-colors duration-100"
                           style={{
-                            backgroundColor: t.id === treatment ? colors.brandLight : "transparent",
-                            color: t.id === treatment ? colors.brand : colors.ink,
+                            backgroundColor: t.id === treatment ? "var(--color-brand-light)" : "transparent",
+                            color: t.id === treatment ? "var(--color-brand)" : "var(--color-ink)",
                             fontWeight: t.id === treatment ? 600 : 400,
                             fontFamily: "var(--font-figtree)",
                             cursor: "pointer",
                           }}
                           onMouseEnter={e => {
-                            if (t.id !== treatment) e.currentTarget.style.backgroundColor = colors.surface2;
+                            if (t.id !== treatment) e.currentTarget.style.backgroundColor = "var(--color-surface-2)";
                           }}
                           onMouseLeave={e => {
                             if (t.id !== treatment) e.currentTarget.style.backgroundColor = "transparent";
@@ -376,7 +375,7 @@ export default function AgendarPage() {
                         >
                           <span>{t.label}</span>
                           {t.id === treatment && (
-                            <Check size={14} style={{ color: colors.brand, flexShrink: 0 }} />
+                            <Check size={14} style={{ color: "var(--color-brand)", flexShrink: 0 }} />
                           )}
                         </button>
                       ))}
@@ -388,19 +387,19 @@ export default function AgendarPage() {
               {/* Free consultation notice */}
               <div
                 className="flex items-start gap-3 p-4 rounded-xl"
-                style={{ backgroundColor: colors.brandLight }}
+                style={{ backgroundColor: "var(--color-brand-light)" }}
               >
                 <div
                   className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                  style={{ backgroundColor: colors.brand }}
+                  style={{ backgroundColor: "var(--color-brand)" }}
                 >
-                  <RiCheckLine size={13} style={{ color: colors.ink }} />
+                  <RiCheckLine size={13} style={{ color: "var(--color-ink)" }} />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold" style={{ color: colors.ink }}>
+                  <p className="text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
                     Consulta de avaliação gratuita
                   </p>
-                  <p className="text-xs mt-0.5 leading-relaxed" style={{ color: colors.ink3 }}>
+                  <p className="text-xs mt-0.5 leading-relaxed" style={{ color: "var(--color-ink-3)" }}>
                     O orçamento do tratamento é apresentado durante a consulta, sem compromisso.
                   </p>
                 </div>
@@ -410,9 +409,9 @@ export default function AgendarPage() {
             {/* Contact form */}
             <div
               className="rounded-2xl p-6 flex flex-col gap-4"
-              style={{ backgroundColor: colors.white, border: `1px solid ${colors.border}` }}
+              style={{ backgroundColor: "var(--color-white)", border: `1px solid var(--color-border)` }}
             >
-              <p className="text-sm font-semibold" style={{ color: colors.ink }}>
+              <p className="text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
                 Seus dados
               </p>
 
@@ -423,8 +422,8 @@ export default function AgendarPage() {
                 value={form.name}
                 onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
                 style={inputStyle}
-                onFocus={e => (e.target.style.borderColor = colors.brandMid)}
-                onBlur={e  => (e.target.style.borderColor = colors.border)}
+                onFocus={e => (e.target.style.borderColor = "var(--color-brand-mid)")}
+                onBlur={e  => (e.target.style.borderColor = "var(--color-border)")}
               />
               <input
                 required
@@ -433,8 +432,8 @@ export default function AgendarPage() {
                 value={form.phone}
                 onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
                 style={inputStyle}
-                onFocus={e => (e.target.style.borderColor = colors.brandMid)}
-                onBlur={e  => (e.target.style.borderColor = colors.border)}
+                onFocus={e => (e.target.style.borderColor = "var(--color-brand-mid)")}
+                onBlur={e  => (e.target.style.borderColor = "var(--color-border)")}
               />
               <input
                 required
@@ -443,8 +442,8 @@ export default function AgendarPage() {
                 value={form.email}
                 onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
                 style={inputStyle}
-                onFocus={e => (e.target.style.borderColor = colors.brandMid)}
-                onBlur={e  => (e.target.style.borderColor = colors.border)}
+                onFocus={e => (e.target.style.borderColor = "var(--color-brand-mid)")}
+                onBlur={e  => (e.target.style.borderColor = "var(--color-border)")}
               />
               <textarea
                 rows={3}
@@ -452,8 +451,8 @@ export default function AgendarPage() {
                 value={form.notes}
                 onChange={e => setForm(f => ({ ...f, notes: e.target.value }))}
                 style={{ ...inputStyle, resize: "none" }}
-                onFocus={e => (e.target.style.borderColor = colors.brandMid)}
-                onBlur={e  => (e.target.style.borderColor = colors.border)}
+                onFocus={e => (e.target.style.borderColor = "var(--color-brand-mid)")}
+                onBlur={e  => (e.target.style.borderColor = "var(--color-border)")}
               />
             </div>
 
@@ -468,7 +467,7 @@ export default function AgendarPage() {
             </Button>
 
             {(!selectedDate || !selectedTime) && (
-              <p className="text-xs text-center" style={{ color: colors.mutedLight }}>
+              <p className="text-xs text-center" style={{ color: "var(--color-muted-light)" }}>
                 Selecione uma data e horário para continuar
               </p>
             )}

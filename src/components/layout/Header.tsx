@@ -7,7 +7,6 @@ import { RiMenuLine, RiCloseLine } from "@remixicon/react";
 import { CalendarCheck } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import Button from "@/components/shared/Button";
-import { colors } from "@/lib/colors";
 
 const nav = [
   { label: "Início",      href: "/"             },
@@ -30,8 +29,8 @@ export default function Header() {
     <header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        backgroundColor: colors.white,
-        borderBottom: `1px solid ${scrolled ? colors.border : "transparent"}`,
+        backgroundColor: "var(--color-white)",
+        borderBottom: `1px solid ${scrolled ? "var(--color-border)" : "transparent"}`,
         boxShadow: scrolled ? "0 4px 24px rgba(37,99,235,0.06)" : "none",
       }}
     >
@@ -57,9 +56,9 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 className="text-sm font-medium transition-colors duration-200"
-                style={{ color: colors.ink3 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = colors.brand)}
-                onMouseLeave={(e) => (e.currentTarget.style.color = colors.ink3)}
+                style={{ color: "var(--color-ink-3)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-brand)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-ink-3)")}
               >
                 {item.label}
               </Link>
@@ -75,7 +74,7 @@ export default function Header() {
         {/* Mobile toggle */}
         <button
           className="lg:hidden p-2 rounded-xl transition-colors"
-          style={{ color: colors.ink }}
+          style={{ color: "var(--color-ink)" }}
           onClick={() => setMobileOpen((v) => !v)}
           aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
           aria-expanded={mobileOpen}
@@ -94,8 +93,8 @@ export default function Header() {
             transition={{ duration: 0.18 }}
             className="lg:hidden px-6 pb-6 pt-3 flex flex-col gap-1"
             style={{
-              borderTop: `1px solid ${colors.border}`,
-              backgroundColor: colors.white,
+              borderTop: `1px solid var(--color-border)`,
+              backgroundColor: "var(--color-white)",
             }}
           >
             {nav.map((item) => (
@@ -103,7 +102,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 className="py-3 text-base font-medium"
-                style={{ color: colors.ink3 }}
+                style={{ color: "var(--color-ink-3)" }}
                 onClick={() => setMobileOpen(false)}
               >
                 {item.label}

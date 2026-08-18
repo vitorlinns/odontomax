@@ -1,7 +1,29 @@
 @import "tailwindcss";
 
-@theme inline {
+@theme {
   --font-display: var(--font-figtree);
+
+  /* ── Marca ────────────────────────────────────────────────── */
+  --color-brand:         #38cef4;
+  --color-brand-hover:   #20bde8;
+  --color-brand-light:   #EFF6FF;
+  --color-brand-mid:     #93C5FD;
+  --color-brand-soft:    #DBEAFE;
+
+  /* ── Texto ────────────────────────────────────────────────── */
+  --color-ink:           #0F172A;
+  --color-ink-3:         #334155;
+  --color-muted:         #475569;
+  --color-muted-light:   #94A3B8;
+  --color-muted-lighter: #CBD5E1;
+
+  /* ── Superfícies ──────────────────────────────────────────── */
+  --color-white:         #FFFFFF;
+  --color-surface:       #F8FBFF;
+  --color-surface-2:     #EFF6FF;
+
+  /* ── Bordas ───────────────────────────────────────────────── */
+  --color-border:        #E2ECF5;
 }
 
 *, *::before, *::after {

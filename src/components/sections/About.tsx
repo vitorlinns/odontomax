@@ -6,7 +6,6 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { RiAwardLine, RiHeartLine, RiShieldCheckLine } from "@remixicon/react";
 import { CalendarCheck } from "lucide-react";
 import Button from "@/components/shared/Button";
-import { colors } from "@/lib/colors";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
 const IMAGES = [
@@ -48,7 +47,7 @@ export default function About() {
   }, [prefersReducedMotion]);
 
   return (
-    <section id="sobre" className="py-24" style={{ backgroundColor: colors.surface }}>
+    <section id="sobre" className="py-24" style={{ backgroundColor: "var(--color-surface)" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
@@ -64,15 +63,15 @@ export default function About() {
               <motion.h2
                 variants={prefersReducedMotion ? {} : fadeUp}
                 className="text-4xl lg:text-5xl font-medium leading-tight"
-                style={{ color: colors.ink }}
+                style={{ color: "var(--color-ink)" }}
               >
                 Cuidando de sorrisos{" "}
-                <span style={{ color: colors.brand }}>há mais de 15 anos</span>
+                <span style={{ color: "var(--color-brand)" }}>há mais de 15 anos</span>
               </motion.h2>
               <motion.p
                 variants={prefersReducedMotion ? {} : fadeUp}
                 className="text-base leading-relaxed"
-                style={{ color: colors.muted }}
+                style={{ color: "var(--color-muted)" }}
               >
                 Reunimos tecnologia de ponta e atendimento humanizado em um ambiente
                 pensado para o seu conforto. Cada paciente é único e merece o melhor
@@ -89,15 +88,15 @@ export default function About() {
                 <div key={title} className="flex items-start gap-4">
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
-                    style={{ backgroundColor: colors.brand }}
+                    style={{ backgroundColor: "var(--color-brand)" }}
                   >
-                    <Icon size={18} style={{ color: colors.ink }} />
+                    <Icon size={18} style={{ color: "var(--color-ink)" }} />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold mb-0.5" style={{ color: colors.ink }}>
+                    <p className="text-sm font-semibold mb-0.5" style={{ color: "var(--color-ink)" }}>
                       {title}
                     </p>
-                    <p className="text-sm leading-relaxed" style={{ color: colors.muted }}>
+                    <p className="text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
                       {description}
                     </p>
                   </div>

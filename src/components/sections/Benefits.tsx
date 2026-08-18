@@ -12,7 +12,6 @@ import {
   RiCalendarLine,
   RiThumbUpLine,
 } from "@remixicon/react";
-import { colors } from "@/lib/colors";
 
 const items = [
   { icon: RiAwardLine,    text: "Clínica Certificada"       },
@@ -32,14 +31,14 @@ function Item({ icon: Icon, text }: { icon: typeof RiAwardLine; text: string }) 
     <div className="flex items-center gap-3 flex-shrink-0">
       <div
         className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
-        style={{ backgroundColor: colors.white }}
+        style={{ backgroundColor: "var(--color-white)" }}
       >
-        <Icon size={16} style={{ color: colors.ink }} />
+        <Icon size={16} style={{ color: "var(--color-ink)" }} />
       </div>
-      <span className="text-sm font-semibold whitespace-nowrap" style={{ color: colors.ink }}>
+      <span className="text-sm font-semibold whitespace-nowrap" style={{ color: "var(--color-ink)" }}>
         {text}
       </span>
-      <span className="mx-2 opacity-30 text-lg select-none" style={{ color: colors.ink }}></span>
+      <span className="mx-2 opacity-30 text-lg select-none" style={{ color: "var(--color-ink)" }}></span>
     </div>
   );
 }
@@ -60,17 +59,17 @@ export default function Benefits() {
       ref={ref}
       id="beneficios"
       className="py-10 overflow-hidden relative"
-      style={{ backgroundColor: colors.brand }}
+      style={{ backgroundColor: "var(--color-brand)" }}
     >
       {/* Left fade */}
       <div
         className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
-        style={{ background: `linear-gradient(to right, ${colors.brand}, transparent)` }}
+        style={{ background: `linear-gradient(to right, var(--color-brand), transparent)` }}
       />
       {/* Right fade */}
       <div
         className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
-        style={{ background: `linear-gradient(to left, ${colors.brand}, transparent)` }}
+        style={{ background: `linear-gradient(to left, var(--color-brand), transparent)` }}
       />
 
       <motion.div style={{ x: x1 }} className="flex items-center gap-0">

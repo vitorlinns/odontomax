@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { CalendarCheck, ChevronRight } from "lucide-react";
 import { RiAwardLine, RiGroupLine, RiEmotionHappyLine } from "@remixicon/react";
-import { colors } from "@/lib/colors";
 import { fadeUp, staggerContainer, scaleIn } from "@/lib/animations";
 import Button from "@/components/shared/Button";
 
@@ -15,7 +14,7 @@ export default function Hero() {
     <section
       className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden"
       style={{
-        backgroundColor: colors.white,
+        backgroundColor: "var(--color-white)",
         backgroundImage: "url('/assets/images/site/hero-background.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -36,12 +35,12 @@ export default function Hero() {
             <motion.h1
               variants={prefersReducedMotion ? {} : fadeUp}
               className="text-5xl lg:text-6xl xl:text-[68px] font-medium leading-[1.08] tracking-tight"
-              style={{ fontFamily: "var(--font-figtree)", color: colors.ink }}
+              style={{ fontFamily: "var(--font-figtree)", color: "var(--color-ink)" }}
             >
               Seu sorriso{" "}
               <span
                 className="relative inline-block"
-                style={{ color: colors.brand }}
+                style={{ color: "var(--color-brand)" }}
               >
                 em boas
               </span>{" "}
@@ -51,7 +50,7 @@ export default function Hero() {
             <motion.p
               variants={prefersReducedMotion ? {} : fadeUp}
               className="text-lg leading-relaxed"
-              style={{ color: colors.muted }}
+              style={{ color: "var(--color-muted)" }}
             >
               Unimos tecnologia de ponta e atendimento humanizado para cuidar
               do seu sorriso com excelência. Tratamentos completos para toda a
@@ -84,26 +83,26 @@ export default function Hero() {
               ].map(({ icon: Icon, number, label }, i) => (
                 <div key={label} className="flex items-center gap-5">
                   {i > 0 && (
-                    <div className="hidden sm:block h-10 w-px flex-shrink-0" style={{ backgroundColor: colors.border }} />
+                    <div className="hidden sm:block h-10 w-px flex-shrink-0" style={{ backgroundColor: "var(--color-border)" }} />
                   )}
                   <div className="flex items-center gap-3">
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
                       style={{
-                        backgroundColor: colors.brand,
-                        border: `1px solid ${colors.brandMid}`,
+                        backgroundColor: "var(--color-brand)",
+                        border: `1px solid var(--color-brand-mid)`,
                       }}
                     >
-                      <Icon size={18} style={{ color: colors.ink }} />
+                      <Icon size={18} style={{ color: "var(--color-ink)" }} />
                     </div>
                     <div className="flex flex-col gap-0">
                       <span
                         className="text-lg font-bold leading-tight"
-                        style={{ color: colors.ink }}
+                        style={{ color: "var(--color-ink)" }}
                       >
                         {number}
                       </span>
-                      <span className="text-xs leading-tight" style={{ color: colors.mutedLight }}>
+                      <span className="text-xs leading-tight" style={{ color: "var(--color-muted-light)" }}>
                         {label}
                       </span>
                     </div>
